@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero is-primary is-fullheight">
+
+    <div class="hero-head">
+
+        Mini Sigaa
+        </h1>
+        <h2 class="subtitle">
+            Projetinho
+        </h2>
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="notification is-info">
+        {{ messages[0] }}. <a href="{{ url_for('login') }}">Clique aqui para logar!</a>
+    </div>
+    {% endif %}
+    {% endwith %}
+</section>
+{% endblock %}
+
+
+

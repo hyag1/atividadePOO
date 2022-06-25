@@ -1,0 +1,38 @@
+{% extends "adm.html" %}]
+{% block content %}
+<div class="modal" id="modalAll">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</abbr></th>
+                <th>Nome</abbr></th>
+                <th>Disiciplinas</abbr></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for aluno in alu %}
+            <tr>
+                <th style="color: black" scope="row">{{aluno[0]}}</th>
+                <td style="color: black"> {{aluno[1]}}</td>
+                <td style="color: black"> {{aluno[4]}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div>
+{% endblock %}
+
+{% block modal %}
+
+<script>
+    $(document).ready(function () {
+        console.log('windows is loaded')
+        $("#modalAll").modal("show")
+    })
+</script>
+
+{% endblock %}

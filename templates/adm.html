@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Painel Administador
+    <span class="badge bg-secondary">
+            Administrador
+    </span>
+</h1>
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="card">
+                <img src="http://ortodontiadescomplicada.com.br/wp-content/uploads/2016/10/img-300x300.png"
+                     alt="Placeholder image" class="card-img-top" height="300px" width="300px">
+                <div class="card-body" style="justify-content: center; align-content: center; color: blue">
+                       <h2>Professores</h2>
+                    <a href="#" class="btn btn-primary">Adicionar</a>
+                    <a href="#" class="btn btn-primary">Excluir</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem">
+                <img src="http://ortodontiadescomplicada.com.br/wp-content/uploads/2016/10/img-300x300.png"
+                     alt="Placeholder image" class="card-img-top" height="300px" width="300px">
+                <div class="card-body">
+                    <button onclick="{{url_for('login')}}">
+                        Alunos
+                    </button>
+                    <a href="#" class="btn btn-primary">Adicionar</a>
+                    <a href="{{url_for('modal')}}" class="btn btn-primary">Excluir</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem">
+                <img src="http://ortodontiadescomplicada.com.br/wp-content/uploads/2016/10/img-300x300.png"
+                     alt="Placeholder image" class="card-img-top" height="300px" width="300px">
+                <div class="card-body">
+                    <button onclick="{{url_for('login')}}">
+                        Disciplinas
+                    </button>
+                    <a href="#" class="btn btn-primary">Adicionar</a>
+                    <a href="#" class="btn btn-primary">Excluir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+

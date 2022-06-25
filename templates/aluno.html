@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero is-link">
+    <div class="hero-body">
+    <p class="title">
+      Painel Aluno
+    </p>
+  </div>
+</section>
+<div class="columns">
+    <div class="column">
+        <div class="card">
+            <div class="card-image">
+                <img src="http://ortodontiadescomplicada.com.br/wp-content/uploads/2016/10/img-300x300.png"
+                     alt="Placeholder image" height="300px" width="300px">
+            </div>
+            <button class="card-content">
+                Alunos
+            </button>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item">Adicionar</a>
+                <a href="#" class="card-footer-item">Excluir</a>
+            </footer>
+        </div>
+
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="card-image">
+                <img src="http://ortodontiadescomplicada.com.br/wp-content/uploads/2016/10/img-300x300.png"
+                     alt="Placeholder image" height="300px" width="300px">
+            </div>
+            <button class="card-content" onclick="{{url_for('login')}}">
+                Adicionar/Excluir Professores
+            </button>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item">Adicionar</a>
+                <a href="#" class="card-footer-item">Excluir</a>
+            </footer>
+        </div>
+
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="card-image">
+                <img src="http://ortodontiadescomplicada.com.br/wp-content/uploads/2016/10/img-300x300.png"
+                     alt="Placeholder image" height="300px" width="300px">
+            </div>
+            <button class="card-content">
+                Adicionar/Excluir Disciplinas
+            </button>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item">Adicionar</a>
+                <a href="#" class="card-footer-item">Excluir</a>
+            </footer>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
