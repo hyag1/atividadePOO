@@ -2,13 +2,14 @@
 {% block content %}
 <section class="hero is-link">
     <div class="hero-body">
-    <p class="title">
-      Painel Aluno
-    </p>
-  </div>
+        <p class="title">
+            Painel Aluno
+        </p>
+    </div>
 </section>
-<div class="columns">
-    <div class="column">
+
+    <div style="display: flex; flex-direction: row;gap: 100px">
+        <div class="column">
         <div class="card">
             <div class="card-image">
                 <img src="http://ortodontiadescomplicada.com.br/wp-content/uploads/2016/10/img-300x300.png"
@@ -22,39 +23,53 @@
                 <a href="#" class="card-footer-item">Excluir</a>
             </footer>
         </div>
-
     </div>
-    <div class="column">
-        <div class="card">
-            <div class="card-image">
-                <img src="http://ortodontiadescomplicada.com.br/wp-content/uploads/2016/10/img-300x300.png"
-                     alt="Placeholder image" height="300px" width="300px">
+        <div class="column">
+            <div class="card">
+                <div class="card-image">
+                    <img src="http://ortodontiadescomplicada.com.br/wp-content/uploads/2016/10/img-300x300.png"
+                         alt="Placeholder image" height="300px" width="300px">
+                </div>
+                <button class="card-content" onclick="{{url_for('login')}}">
+                    Disciplinas
+                </button>
+                <footer class="card-footer">
+                    <a href="{{url_for('minhas_disciplinas', id = ident)}}" class="card-footer-item">Minhas Disciplinas</a>
+                    <a href="{{url_for('modal_lista_disciplinas', id = ident)}}"
+                       class="card-footer-item">Matricular-se</a>
+                </footer>
             </div>
-            <button class="card-content" onclick="{{url_for('login')}}">
-                Adicionar/Excluir Professores
-            </button>
-            <footer class="card-footer">
-                <a href="#" class="card-footer-item">Adicionar</a>
-                <a href="#" class="card-footer-item">Excluir</a>
-            </footer>
-        </div>
 
-    </div>
-    <div class="column">
-        <div class="card">
-            <div class="card-image">
-                <img src="http://ortodontiadescomplicada.com.br/wp-content/uploads/2016/10/img-300x300.png"
-                     alt="Placeholder image" height="300px" width="300px">
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="card-image">
+                    <img src="http://ortodontiadescomplicada.com.br/wp-content/uploads/2016/10/img-300x300.png"
+                         alt="Placeholder image" height="300px" width="300px">
+                </div>
+                <button class="card-content">
+                    Adicionar/Excluir Disciplinas
+                </button>
+                <footer class="card-footer">
+                    <a href="#" class="card-footer-item">Adicionar</a>
+                    <a href="#" class="card-footer-item">Excluir</a>
+                </footer>
             </div>
-            <button class="card-content">
-                Adicionar/Excluir Disciplinas
-            </button>
-            <footer class="card-footer">
-                <a href="#" class="card-footer-item">Adicionar</a>
-                <a href="#" class="card-footer-item">Excluir</a>
-            </footer>
         </div>
     </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Noticias</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            {{ messages[0] }}.
+        </div>
+    </div>
+    {% endif %}
+    {% endwith %}
 </div>
 {% endblock %}
 

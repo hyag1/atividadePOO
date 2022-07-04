@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+venv
+
+database
+
+migrations
+
+__pycache__

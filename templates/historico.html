@@ -1,0 +1,43 @@
+{% extends "adm.html" %}]
+{% block content %}
+<div class="modal" id="modalAll">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        {{val}}
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Disciplina</abbr></th>
+                <th>Codigo</abbr></th>
+                <th>1UN</abbr></th>
+                <th>2UN</abbr></th>
+                <th>3UN</abbr></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for disciplina in hist %}
+            <tr>
+                <th style="color: black" scope="row">{{disciplina[1]}}</th>
+                <td style="color: black"> {{disciplina[0]}}</td>
+                <td style="color: black"> {{disciplina[2]}}</td>
+                <td style="color: black"> {{disciplina[3]}}</td>
+                <td style="color: black"> {{disciplina[4]}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div>
+{% endblock %}
+
+{% block modal %}
+
+<script>
+    $(document).ready(function () {
+        console.log('windows is loaded')
+        $("#modalAll").modal("show")
+    })
+</script>
+
+{% endblock %}
