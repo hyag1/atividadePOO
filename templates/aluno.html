@@ -16,11 +16,10 @@
                      alt="Placeholder image" height="300px" width="300px">
             </div>
             <button class="card-content">
-                Alunos
+                Menu Aluno
             </button>
             <footer class="card-footer">
-                <a href="#" class="card-footer-item">Adicionar</a>
-                <a href="#" class="card-footer-item">Excluir</a>
+                <a href="{{url_for('gerar_comprovante',id = ident)}}" class="card-footer-item">Gerar Declaração</a>
             </footer>
         </div>
     </div>
@@ -40,21 +39,6 @@
                 </footer>
             </div>
 
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="card-image">
-                    <img src="http://ortodontiadescomplicada.com.br/wp-content/uploads/2016/10/img-300x300.png"
-                         alt="Placeholder image" height="300px" width="300px">
-                </div>
-                <button class="card-content">
-                    Adicionar/Excluir Disciplinas
-                </button>
-                <footer class="card-footer">
-                    <a href="#" class="card-footer-item">Adicionar</a>
-                    <a href="#" class="card-footer-item">Excluir</a>
-                </footer>
-            </div>
         </div>
     </div>
     {% with messages = get_flashed_messages() %}

@@ -1,9 +1,10 @@
 import sqlite3
-from flask import Blueprint,Flask,render_template,request,flash, redirect, url_for,Response
+from flask import Blueprint,Flask,render_template,request,flash, redirect, url_for,Response,send_file
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import insert
 from config import app_config,app_active
 from model import *
+from pdfGenerator import *
 
 
 config=app_config[app_active]
@@ -113,8 +114,15 @@ def create_app(config_name):
                 print(disciplina)
                 print(matricula)
                 historico.append([disciplina[2],disciplina[3],matricula[3],matricula[4],matricula[5]])
-        print(historico)
         return render_template("historico.html",hist = historico)
+
+    @app.route('/login/aluno/<id>/comprovante_matricula')
+    def gerar_comprovante(id):
+        user: Usuario = Usuario.query.filter_by(id=id).first()
+        nome = user.nome
+        name = criar_pdf(nome,id)
+        flash('Comprovante de Matricula gerado com sucesso!')
+        return send_file(name, as_attachment=True)
 
 
 
