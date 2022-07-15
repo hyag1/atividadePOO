@@ -45,7 +45,7 @@ doc = SimpleDocTemplate(name_path, pagesize=letter,
 
 def criar_pdf(name,id):
     Story = []
-    logo = "public/logo.png"
+    logo = "static/logo.png"
     full_name = str(name)
     formatted_time = time.ctime()
     im = Image(logo, 5.5 * inch, 1.5 * inch)

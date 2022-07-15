@@ -1,24 +1,110 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="hero is-primary is-fullheight">
+<style>
+    body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+}
 
+
+/* CUSTOMIZA O CAROUSEL
+-------------------------------------------------- */
+
+/* Classe base do carousel */
+.carousel {
+  margin-bottom: 4rem;
+}
+
+.carousel-item {
+  height: 32rem;
+  background-color: #777;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+
+/* Alinha, centralmente, o texto dentro das três colunas abaixo do carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+/* CSS RESPONSIVE
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Aumenta o tamanho do conteúdo do carousel */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+.frist-slide{
+    max-width: 300px;
+}
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+</style>
     <div class="hero-head">
+            <h2 class="subtitle">
+                Projetinho Mini Sigaa
+                <span class="badge bg-secondary">DEV</span>
+            </h2>
+        </div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{'/static/f2.png'}}" class="frist-slide" maxWidth ="400px" alt="foto2 a ">-->
+          </div>
+          <div class="carousel-item">
+              <img src="{{'/static/ft1.jpg'}}" class="frist-slide" maxWidth ="400px" alt="foto1a ">-->
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Voltar</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Avançar</span>
+        </a>
+      </div>
 
-        Mini Sigaa
-        </h1>
-        <h2 class="subtitle">
-            Projetinho
-        </h2>
-    </div>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <div class="notification is-info">
-        {{ messages[0] }}. <a href="{{ url_for('login') }}">Clique aqui para logar!</a>
-    </div>
-    {% endif %}
-    {% endwith %}
-</section>
-{% endblock %}
+        <img src="..." class="img-fluid" alt="...">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="notification is-info">
+            {{ messages[0] }}. <a href="{{ url_for('login') }}">Clique aqui para logar!</a>
+        </div>
+        {% endif %}
+        {% endwith %}
+    </section>
+    {% endblock %}
 
-
+</div>
 
